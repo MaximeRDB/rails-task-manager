@@ -1,0 +1,9 @@
+<div class="container d-flex align items">
+<%= form_with model: @task do |form| %>
+  <%= form.text_field :title %>
+  <%= form.text_field :details %>
+  <%= form.check_box :completed %>
+  <%= form.text_area :body, size: "60x10" %>
+  <%= form.submit %>
+<% end %>
+</div>

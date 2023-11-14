@@ -1,0 +1,14 @@
+<div class=" card d-flex align-items-center p-3 mb-2 bg-dark-subtle text-emphasis-dark">
+<h1>Bonjour et bienvenue sur votres liste des taches</h1>
+ <% @tasks.each do |task| %>
+    <li><%= task.title %></li>
+    <p><%= link_to "Show #{task.title}", task_path(task), class: 'btn btn-outline-success' %></p>
+    <p><%= link_to "Update", edit_task_path(task), class: 'btn  btn-outline-primary' %></p>
+<%= link_to "Delete",
+  task_path(task),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn  btn-outline-primary'
+%>
+  <% end %>
+
+<p><%= link_to "Create", new_task_path, class: 'btn  btn-outline-primary' %></p>
+</div>
